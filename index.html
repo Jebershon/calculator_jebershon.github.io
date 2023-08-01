@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(240, 11, 11, 0.649);
+        }
+        .head{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: crimson;
+        }
+        .card{
+          left: 50%;
+          top: 50%;
+          position: absolute;
+          transform: translate(-50%,-50%);
+          margin: 20px;
+          border-radius: 7%;
+          border-color: gray;
+          padding: 10px;
+          box-shadow: 3px 3px 3px #888888, -3px -3px 3px #888888;
+          background-color: #888888;
+        }
+        .bn{
+        width: 1cm;
+        height: 1cm;
+        align-content: center;
+        background-color: transparent;
+        color: red;
+        border-style: none;
+        border-radius: 100%;
+        box-shadow: 2px 2px 3px  #4d4b4b,-2px -2px 3px  #4d4b4b;
+        }
+        .bn:hover{
+            background-color: #4d4b4b;
+        }
+        .out{
+            border-radius: 10%;
+            height: 0.7cm;
+            border-style: none;
+            box-shadow: 3px 3px 3px #888888, -3px -3px 3px #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="container">
+          <div>
+            <h2 class="head">Calculator</h2>
+          </div>
+          <div>
+            <form name="form">
+                <div>
+                    <input type="text" class="out" id="display"></input>
+                </div>
+            <table>
+                <br>
+                <tr>
+                <td><input type="button" class="bn" value="1" onclick="form.display.value+='1'"></input></td>
+                <td><input type="button" class="bn" value="2" onclick="form.display.value+='2'"></input></td>
+                <td><input type="button" class="bn" value="3" onclick="form.display.value+='3'"></input></td>
+                <td><input type="button" class="bn" value="+" onclick="form.display.value+='+'"></input></td>
+              </tr>
+              <tr>
+                <td><input type="button" class="bn" value="4"  onclick="form.display.value+='4'"></input></td>
+                <td><input type="button" class="bn" value="5"  onclick="form.display.value+='5'"></input></td>
+                <td><input type="button" class="bn" value="6"  onclick="form.display.value+='6'"></input></td>
+                <td><input type="button" class="bn" value="-"  onclick="form.display.value+='-'"></input></td>
+              </tr>
+              <tr>
+                <td><input type="button" class="bn" value="7"  onclick="form.display.value+='7'"></input></td>
+                <td><input type="button" class="bn" value="8"  onclick="form.display.value+='8'"></input></td>
+                <td><input type="button" class="bn" value="9"  onclick="form.display.value+='9'"></input></td>
+                <td><input type="button" class="bn" value="/"  onclick="form.display.value+='/'"></input></td>
+              </tr>
+              <tr>
+                <td><input type="button" class="bn" value="0"  onclick="form.display.value+='0'"></input></td>
+                <td><input type="button" class="bn" value="%"  onclick="form.display.value+='%'"></input></td>
+                <td><input type="button" class="bn" value="*"  onclick="form.display.value+='*'"></input></td>
+                <td><input type="button" class="bn" value="="  onclick="form.display.value = eval(form.display.value)"></input></td>
+              </tr>
+              <tr>
+                <td><input type="button" class="bn" style="text-align: center;" value="AC"  onclick="form.display.value =''"></input></td>
+              </tr>
+              </table>
+              </form>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
