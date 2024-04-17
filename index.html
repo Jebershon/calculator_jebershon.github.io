@@ -6,43 +6,45 @@
     <title>Document</title>
     <style>
         body{
-            background-color: rgba(240, 11, 11, 0.649);
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
         }
         .head{
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            color: crimson;
+            color: rgb(255, 255, 255);
         }
         .card{
-          left: 50%;
-          top: 50%;
-          position: absolute;
-          transform: translate(-50%,-50%);
+          width: fit-content;
+          height: fit-content;
           margin: 20px;
-          border-radius: 7%;
-          border-color: gray;
           padding: 10px;
-          box-shadow: 3px 3px 3px #888888, -3px -3px 3px #888888;
-          background-color: #888888;
+          border-radius: 10px;
+          background-color: #242530;
         }
         .bn{
         width: 1cm;
         height: 1cm;
-        align-content: center;
-        background-color: transparent;
-        color: red;
-        border-style: none;
+        background-color: #404258;
+        margin: 4px;
+        color: rgb(255, 255, 255);
+        border: none;
         border-radius: 100%;
-        box-shadow: 2px 2px 3px  #4d4b4b,-2px -2px 3px  #4d4b4b;
         }
         .bn:hover{
-            background-color: #4d4b4b;
+            background-color: #b2b2b2;;
         }
         .out{
-            border-radius: 10%;
-            height: 0.7cm;
-            border-style: none;
-            box-shadow: 3px 3px 3px #888888, -3px -3px 3px #888888;
+          background-color: #242530;
+          border: none;
+          color: white;
+          font-size: larger;
+          width: 70%;
+        }
+        .ac{
+         width: 100%;
+         border-radius: 20px;
         }
     </style>
 </head>
@@ -55,36 +57,36 @@
           <div>
             <form name="form">
                 <div>
-                    <input type="text" class="out" id="display"></input>
+                    <center><input type="text" class="out" id="display" disabled></input></center>
                 </div>
-            <table>
+            <table style="display: flex; justify-content: center; align-content: center;">
                 <br>
+                <tr>
+                  <td><input type="button" class="bn" value="AC"  onclick="form.display.value =''" style="background-color: #b2b2b2; color: black;"></input></td>
+                  <td><input type="button" class="bn" value="x"  onclick="form.display.value+='*'" style="background-color: #b2b2b2; color: black;"></input></input></td>
+                  <td><input type="button" class="bn" value="%"  onclick="form.display.value+='%'" style="background-color: #b2b2b2; color: black;"></td>
+                  <td><input type="button" class="bn" value="/"  onclick="form.display.value+='/'" style="background-color: #f49d1a;"></input></td>
+                </tr>
                 <tr>
                 <td><input type="button" class="bn" value="1" onclick="form.display.value+='1'"></input></td>
                 <td><input type="button" class="bn" value="2" onclick="form.display.value+='2'"></input></td>
                 <td><input type="button" class="bn" value="3" onclick="form.display.value+='3'"></input></td>
-                <td><input type="button" class="bn" value="+" onclick="form.display.value+='+'"></input></td>
+                <td><input type="button" class="bn" value="-"  onclick="form.display.value+='-'" style="background-color: #f49d1a;"></input></td>
               </tr>
               <tr>
                 <td><input type="button" class="bn" value="4"  onclick="form.display.value+='4'"></input></td>
                 <td><input type="button" class="bn" value="5"  onclick="form.display.value+='5'"></input></td>
                 <td><input type="button" class="bn" value="6"  onclick="form.display.value+='6'"></input></td>
-                <td><input type="button" class="bn" value="-"  onclick="form.display.value+='-'"></input></td>
+                <td><input type="button" class="bn" value="+" onclick="form.display.value+='+'" style="background-color: #f49d1a;"></input></td>
               </tr>
               <tr>
                 <td><input type="button" class="bn" value="7"  onclick="form.display.value+='7'"></input></td>
                 <td><input type="button" class="bn" value="8"  onclick="form.display.value+='8'"></input></td>
                 <td><input type="button" class="bn" value="9"  onclick="form.display.value+='9'"></input></td>
-                <td><input type="button" class="bn" value="/"  onclick="form.display.value+='/'"></input></td>
+                <td><input type="button" class="bn" value="="  onclick="form.display.value = eval(form.display.value)" style="background-color: #f49d1a;"></input></td>
               </tr>
               <tr>
-                <td><input type="button" class="bn" value="0"  onclick="form.display.value+='0'"></input></td>
-                <td><input type="button" class="bn" value="%"  onclick="form.display.value+='%'"></input></td>
-                <td><input type="button" class="bn" value="*"  onclick="form.display.value+='*'"></input></td>
-                <td><input type="button" class="bn" value="="  onclick="form.display.value = eval(form.display.value)"></input></td>
-              </tr>
-              <tr>
-                <td><input type="button" class="bn" style="text-align: center;" value="AC"  onclick="form.display.value =''"></input></td>
+                <td colspan="4"><input type="button" class="bn ac" value="0"  onclick="form.display.value+='0'"></input></td>
               </tr>
               </table>
               </form>
